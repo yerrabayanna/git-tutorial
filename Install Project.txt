@@ -1,0 +1,290 @@
+Add IIS to your windows Pc[optional]
+====================================
+1. open control pannel
+2. go to programs and features
+3. click on turn windows features on or off
+4. select internet information service
+5. click ok
+
+
+Test Webserver:
+===============
+
+1. open any browser : Chrome,Firebox,Ie,etc
+2. Type the virtual address
+	http://localhost
+		or
+	http://127.0.0.1
+
+
+Creating a website on Local server:
+===================================
+1. open IIS
+	run -> inetmgr
+2. expand local computer [http://localhost]
+3. expand "Sites" Folder
+4. Right Click on "default Website"
+5. Select the option "Add Virtual Directory"
+	alias[site.name] : Ebay
+	Physical path : C:\Ebay
+
+   Virtual Path:   http://localhost/Ebay
+   Physical Path:  C:\Ebay
+
+Add Resources into Website:
+==========================
+1. open physical path in file explorer
+	|_ in  IIS -> Right click on site name  -> explore
+2.add Folders by name
+	-Images
+	-Docs
+3. Add pictures into images Folder
+	.jpg,.png,.gif
+4. add any document into Docs Folder
+	.pdf, .docx
+        
+
+
+setup environment for UI Technologies:
+======================================
+1. Install node Js for NPM on Your PC
+	- visit the Site
+	  http://nodejs.org/en download/
+ - Clickon on other downloads 
+ - Download ".msi" for windows or MAC
+ - install ".msi" file by following the wizard
+ - Test from command prompt
+	c:\> node -v
+	c:\> npm -v
+2. Install visual studio code IDE
+	- visit the website
+	  http://code.visualstudio.com/
+ - Download setup for windows 
+ - Install on your PC
+ - open VS Code from desktop or your programs
+ - Go to "Extensions"
+ - Search and Install following extensions
+	a) open in browser
+	b) Live server
+	c) VScode-icons
+
+Setup project for Webdevelopment:
+================================
+1. open any drive on your pc and create a newFolder
+	"Webdevelopment"
+	[c:\webdevelopment]
+2. open Visual Studio code
+3. Go to file menu -> open folder
+4.Select "c:\webdevelopment"
+
+Link your project to localserver:
+================================
+1. open localserver : IIS
+	-> controlpanel
+	-> administrative tools
+	-> internet information service manager
+2. expands "Sites" folder
+3. Right Click on "default website"
+4. Select the option "Add Virtual Directory"
+	Alias[site name] : webdevelopment
+	physical path :  C:\webdevelopment
+
+Test your application:
+======================
+1. open any Browser: chrome
+2. type the following URL
+	http://localhost/webdevelopment
+
+                                   
+installing bootstrap for your project:
+=====================================
+1. open your project in "VS code"
+2. open "Terminal" by using
+	ctrl+`
+3. Type the following command 
+    C:/webdevelopment> npm install bootstrap
+4. Bootstrap copied into following path
+	node_modules
+	|_
+	   bootstrap
+	   |_
+	      dist
+		|_
+		   css
+		    |_
+			Bootstrap.css
+
+Installing JQuery:
+==================
+1.open your  project location in command prompt or VS code Terminal
+2.type the following command
+  c:\webdevelopment>npm install jquery
+3.This will install the library
+	node_modules
+	|_
+	  jquery
+	   |_
+	     dist
+		|_
+		  jquery.js
+
+
+
+Install JQuery UI:
+==================
+1.visit the official website of JQuery
+	https://jqueryui.com/
+2.Download
+    JQuery UI library
+3.extract the ".zip" file
+4.copy all library files
+5.Go to your project "node_modules
+6.add a new folder by Name "Jquery-ui"
+7.paste all Jquery ui library files,which includes
+	Jquery_ui
+	 |_
+	   jquery-ui.js
+	    |_
+	      jquery-ui.css
+
+ex:
+ <link rel="stylesheet" href="../node_modules/jquery-ui/jquery-ui.js/jquery-ui.css">
+
+
+
+Installing AngularJs:
+====================
+1.open your project in VS code
+2.open Terminal[ctrl+`]
+3.Type the command
+	>npm install angular
+4.it will install following
+	node_modules
+	|_
+	  Angular
+	  |_
+	   Angular.js
+
+
+
+Setup Environment for typescript:
+=================================
+2.Install TypeScript
+  - open windows command prompt
+      C:\>npm install -g typescript@latest
+
+  - verify typescript version[3.8.3]
+      C:\>tsc -v
+3.Download and install visual studio code[IDE]
+4.open VS code home screen and select the link
+	"Install support for javascript"
+5.Go to VS code "Extensions", search for following Extensions and install for VS code
+	- EsLint
+	- TsLint
+	- VS code-icons
+	- LiveServer
+	- open in Browser
+6.Create a new folder for typescript project
+	C:\Typescriptonlineclass
+7.open your project folder in VS code
+8.Create a new file "[+]Newfile"
+	hello.ts
+  var msg ="Welcome to Typescript" ;
+  document.write("<h2>" + msg + "</h2>");
+9.Go to "Terminal menu " and select "New Terminal"
+	[ctrl+`] 
+10.Transcompile Ts into Js
+   C:\typescriptonlineclass>tsc hello.ts
+   [it generates hello.js]
+11.Create a new HTML file by Name
+	"index.html"
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <script src="hello.js" type="text/javascript">
+  </script>
+  </head>
+  </html>
+
+
+Setup Environment for Angular:
+==============================
+1.Install node js
+2.Install Typescript
+3.Install Angular cli
+  - open command prompt
+  - Install with NPM
+  >npm install -g @angular/cli
+
+  - update to new Version
+  >ng update @angular/cli @angular/core
+
+
+Creating a new Angular App:
+===========================
+1. Create a new Folder in your PC
+	"Angular_Online_Projects"
+
+2. Open folder location in command prompt
+
+	>ng new appName
+	>ng new Amazon
+
+3. It will ask for
+    ? Would you like to add Angular routing? (y/N) N
+    ? Which stylesheet format would you like to use? CSS
+
+4. It creates a new Application 
+
+
+
+Setup Multiple Project in Workspace:
+===================================
+
+1. Create  a new Workspace
+> ng new Angular-workspace --createApplication="false"
+
+2. Create a new Application in Workspace
+
+> cd Angular-workspace
+> ng generate application  appName
+   ng  generate application  Amazon
+
+Infrastructure of Project [Angular Application]
+
+
+Starting with a Project in WorkSpace:
+===============================
+1. Open Terminal
+2. In Workspace you type the following command
+
+    >ng serve  --project=Amazon
+
+   Server starts listening on "http://localhost:4200"
+
+3. Open Browser and Request URL
+	http://localhost:4200
+
+
+Download and Configure Fontawesome:
+===================================
+1. https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself
+2. Download for Web
+3. Extract and copy its folders
+4. Go to Your workspace “node_modules”
+5. Create a new folder by name “fonts” and paste the copied files
+6. Import into “styles.css” folder
+    @import "../../../node_modules/fonts/css/all.css";
+
+Setup Angular Material for your Project:
+=======================================s
+1. Open Your App folder in terminal
+    >ng add @angular/material
+    ? Which theme - Indigo - Pink
+    ? Set up global Angular Material typography styles? Y
+    ? Set up browser animations for Angular Material? Y
+
+2. Goto "styles.css"
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
